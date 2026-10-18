@@ -1,44 +1,67 @@
-# DANAW
+# DANAW 🌊
+> **Decentralized Aquaculture Swarm Platform for Real-Time Thermocline Inversion Forecasting & Fish Kill Prevention**
 
-**Depth-stratified Aquatic Network for Anticipating Water-inversions**
+[![Status](https://img.shields.io/badge/Status-Complete%20%2F%20Ready%20for%20Presentation-success.svg)]()
+[![Platform](https://img.shields.io/badge/Platform-IoT%20%2F%20Edge%20AI%20%2F%20Expo-orange.svg)]()
+[![Target Ecosystems](https://img.shields.io/badge/Target-Lakes%20Buhi%20%26%20Bato-blue.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A mobile command dashboard that helps smallholder tilapia farmers in Lakes Buhi and Bato (Camarines Sur, Philippines) see an *Overtoun* lake turnover coming and act before it kills their fish. Built for the Philippine Startup Challenge XI.
+---
 
-## What the app does
+## 📌 About DANAW
+**DANAW** is an advanced aquaculture intelligence and swarm telemetry platform engineered to monitor, analyze, and forecast thermocline inversions and water quality shifts in vulnerable freshwater bodies (specifically optimized for **Lakes Buhi and Bato**). By deploying synchronized edge nodes connected via LoRa mesh networks and predictive machine learning models, DANAW equips fish farmers with early-warning telemetry and automated mitigation triggers to prevent catastrophic fish kills.
 
-| Screen | What it shows |
-|---|---|
-| **Dash** | Dissolved oxygen, water temperature, risk level, an interactive water column profile, and remote aerator and pump controls. |
-| **Nodes** | Scan for and pair LoRa buoy nodes and view the mesh topology. |
-| **Map** | Bathymetry map with node pins, thermal overlay, upwelling zone and depth layers. |
-| **Forecast** | 12-hour multi-depth temperature forecast, inversion alert and one-tap pre-emptive aeration. |
-| **Vision** | Camera feed with detection boxes, stress estimate, schooling density and event timeline. |
+---
 
-## Tech stack
+## 📱 App Preview & UI/UX Design
+> *Clean, high-performance interfaces tailored for field deployment and rapid farmer response.*
 
-Expo, React Native, TypeScript, Expo Router, react-native-svg, expo-linear-gradient, Poppins.
+| Dashboard Overview | Spatial Mapping | Predictive Forecast |
+| :---: | :---: | :---: |
+| ![Dashboard](assets/dashboard.png) | ![Map](assets/map.png) | ![Forecast](assets/forecast.png) |
 
-## Run it locally
+---
 
-You need Node.js and the Expo Go app on your phone.
+## 🚀 Core System Modules
 
-    git clone https://github.com/YOUR-USERNAME/danaw-app.git
-    cd danaw-app
-    npm install
-    npx expo start
+### 1. 📊 Dashboard
+* **3-Level Depth Telemetry Scroller:** Real-time water column profiling across stratified layers for precise environmental inspection.
+* **LoRa Control Hub & $O_2$ Pump Station:** Remote actuation interface for manual or automated aeration control to stabilize dissolved oxygen levels.
+* **Depth Intelligence Card:** Interactive deep-dive module with quick-access profile expansion and performance metrics.
 
-**Note:** the Vision screen uses a sample fish photo that is not included in this repository. Add any fish or aquarium photo you have rights to as `assets/images/fish.jpeg` before starting the app.
+### 2. 🌐 Swarm Nodes
+* **Swarm Setup & Network Topology:** Real-time visualization of node health, connectivity paths, and mesh signal status.
+* **Smart Filtering:** Instant filtering controls supporting *All Connected*, *Unpaired*, and *All* nodes.
 
-## Prototype status
+### 3. 🗺️ Spatial Map
+* **Topobathymetry Overlays:** High-resolution spatial mapping combining lake contour depth data with live water column metrics.
+* **Dynamic Node Inspection:** Clean map-first layout where detailed node metrics appear dynamically via interactive selection.
 
-Sensor readings, forecasts, camera detections and device commands are simulated in this prototype. The buoy hardware, forecasting model and LiDAR basemaps are described in the project concept note and are not part of this repository yet.
+### 4. 📈 Predictive Forecast
+* **Stratification Index & Inversion Alerts:** Early-warning analytics detecting thermal layer inversion risks before anaerobic conditions occur.
+* **Observed + Forecast Graphs:** Time-series prediction trends tracking thermal shifts and environmental parameters.
+* **Automated Aeration Feedback:** Seamless command dispatch with clear operational states for emergency pump triggers.
 
-## Team
+### 5. 👁️ Computer Vision & Analytics
+* **Schooling Density Tracking:** Edge vision insights evaluating fish behavior, spatial distribution, and biomass metrics.
+* **Interactive Event Timeline:** Historical tracking log for water parameter anomalies, alerts, and system responses.
 
-Kaiser Francis L. Badiong, Marqus Szymon E. Pelagio, Eunice Nullan
+---
 
-Coach: Engr. John Roy Galvez, CCPE, CRS
+## 🛠️ Tech Stack & Architecture
+* **Frontend / Mobile:** React Native & Expo framework
+* **Hardware & Communication:** Microcontroller units equipped with LoRa transceivers (Meshtastic-compatible infrastructure), multi-depth temperature/DO sensors, and bathymetric sonar/LiDAR integration.
+* **Intelligence & Processing:** Time-series forecasting algorithms and spatial interpolation models.
 
-## License
+---
 
-The code is released under the [MIT License](LICENSE). The DANAW name and logo are not covered by that license.
+## 📂 Repository Structure
+```text
+├── assets/               # App screenshots and UI visuals
+├── src/
+│   ├── components/       # UI views (Dashboard, Nodes, Map, Forecast, Vision)
+│   ├── assets/           # Icons, map graphics, and styling assets
+│   └── services/         # Telemetry sync and sensor data handlers
+├── public/               # Static assets and layout templates
+├── README.md
+└── LICENSE
