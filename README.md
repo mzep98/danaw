@@ -1,111 +1,134 @@
 # DANAW
-> **Decentralized Aquaculture Swarm Platform for Real-Time Thermocline Inversion Forecasting & Fish Kill Prevention**
 
-[![Status](https://img.shields.io/badge/Status-Complete%20%2F%20Ready%20for%20Presentation-success.svg)]()
-[![Platform](https://img.shields.io/badge/Platform-IoT%20%2F%20Edge%20AI%20%2F%20Expo-orange.svg)]()
-[![Target Ecosystems](https://img.shields.io/badge/Target-Lakes%20Buhi%20%26%20Bato-blue.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+> **Depth-stratified Aquatic Network for Anticipating Water-inversions**
+> A decentralized early-warning platform that helps tilapia farmers in Lakes Buhi and Bato see a lake turnover (*Overtoun*) coming and prevent fish kills.
+
+![Status](https://img.shields.io/badge/Status-Working%20Prototype-success.svg)
+![Platform](https://img.shields.io/badge/Platform-Expo%20%2F%20React%20Native-orange.svg)
+![Target](https://img.shields.io/badge/Target-Lakes%20Buhi%20%26%20Bato-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+Built for the **Philippine Startup Challenge XI**.
 
 ---
 
 ## About DANAW
-**DANAW** is an advanced aquaculture intelligence and swarm telemetry platform engineered to monitor, analyze, and forecast thermocline inversions and water quality shifts in vulnerable freshwater bodies, specifically optimized for **Lakes Buhi and Bato**[cite: 4]. By deploying synchronized edge nodes connected via offline Meshtastic LoRa mesh networks and predictive machine learning models, DANAW equips fish farmers with early-warning telemetry and automated mitigation triggers to prevent catastrophic fish kills[cite: 4].
+
+Lake overturns in Lakes Buhi and Bato can wipe out 30 to 40% of a tilapia harvest in a single cycle. Farmers rely on manual surface sampling, which only shows the problem after the fish are already stressed, and commercial monitors cost PHP 30,000 to 80,000 or more per unit.
+
+DANAW combines low-cost buoy nodes that measure the water column at several depths, an offline Meshtastic LoRa mesh network that works without cellular signal, and forecasting models that predict a thermocline inversion hours ahead. This repository contains the **mobile command app**, where a farmer sees the alert and switches on aerators and oxygen pumps remotely.
+
+## How it works
+
+1. **Buoy nodes** (Arduino-based, IP68) measure water temperature at several depths.
+2. **Meshtastic LoRa mesh** carries the data up to 15 km to a shore gateway.
+3. **Forecasting models** combine live readings with lakebed (LiDAR) maps to predict an inversion.
+4. **This app** shows the alert and sends reverse-mesh commands to aerators and pumps.
 
 ---
 
-## Hardware 3D Design & Architecture
-> *IP68-rated Arduino-powered buoy node equipped with multi-depth thermal arrays and Meshtastic LoRa communication[cite: 4, 6].*
+## Hardware design
+
+> IP68-rated buoy node with a multi-depth temperature array and a LoRa antenna.
 
 <p align="center">
-  <img src="assets/images/buoy_3d.png" width="550" alt="DANAW Hardware 3D Model">
+  <img src="assets/images/buoy_3d.png" alt="DANAW buoy 3D model" width="520" />
 </p>
 
 ---
 
-## App Preview & UI/UX Design
-> *Clean, high-performance interfaces tailored for field deployment and rapid farmer response[cite: 8].*
+## App preview
 
 <table>
   <tr>
-    <td align="center"><b>Dashboard</b></td>
-    <td align="center"><b>Swarm Nodes</b></td>
-    <td align="center"><b>Spatial Map</b></td>
-  </tr>
-  <tr>
-    <td><img src="assets/images/dash.png" width="230" alt="Dashboard"></td>
-    <td><img src="assets/images/nodes.png" width="230" alt="Nodes"></td>
-    <td><img src="assets/images/map.png" width="230" alt="Map"></td>
-  </tr>
-  <tr>
-    <td align="center"><b>Predictive Forecast</b></td>
-    <td align="center"><b>Computer Vision</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><img src="assets/images/forecast.png" width="230" alt="Forecast"></td>
-    <td><img src="assets/images/vision.png" width="230" alt="Vision"></td>
-    <td></td>
+    <td align="center"><img src="assets/images/dash.png" width="170" /><br/><b>Dashboard</b></td>
+    <td align="center"><img src="assets/images/nodes.png" width="170" /><br/><b>Swarm Nodes</b></td>
+    <td align="center"><img src="assets/images/map.png" width="170" /><br/><b>Spatial Map</b></td>
+    <td align="center"><img src="assets/images/forecast.png" width="170" /><br/><b>Forecast</b></td>
+    <td align="center"><img src="assets/images/vision.png" width="170" /><br/><b>Vision</b></td>
   </tr>
 </table>
 
 ---
 
-## Core System Modules
+## Core modules
 
 ### 1. Dashboard
-- **3-Level Depth Telemetry Scroller:** Real-time water column profiling across stratified layers for precise environmental inspection[cite: 4].
-- **LoRa Control Hub & O2 Pump Station:** Remote actuation interface for manual or automated aeration control to stabilize dissolved oxygen levels[cite: 6].
-- **Depth Intelligence Card:** Interactive deep-dive module with quick-access profile expansion and performance metrics.
+- **Water column profile:** drag a probe through three layers (Surface, Mid-Water, Bottom) and switch between temperature and oxygen.
+- **Live readings:** dissolved oxygen, water temperature, risk level and max depth, each opening its related screen.
+- **Remote actuation:** switch aerators and the O₂ pump station over the LoRa control hub.
 
 ### 2. Swarm Nodes
-- **Swarm Setup & Network Topology:** Real-time visualization of node health, connectivity paths, and mesh signal status[cite: 6].
-- **Smart Filtering:** Instant filtering controls supporting All Connected, Unpaired, and All nodes.
+- **Node scanning and pairing** with a live radar view.
+- **Network topology** showing node roles, battery, signal and data flow.
+- **Filters** for All, Connected and Unpaired devices.
 
 ### 3. Spatial Map
-- **Topobathymetry Overlays:** High-resolution spatial mapping combining lake contour depth data with live water column metrics[cite: 4].
-- **Dynamic Node Inspection:** Clean map-first layout where detailed node metrics appear dynamically via interactive selection.
+- **Bathymetry map** with depth contours, fish cages, an upwelling hazard zone and a thermal overlay.
+- **Node inspection:** tap a pin to open its temperature, oxygen and signal readings.
 
 ### 4. Predictive Forecast
-- **Stratification Index & Inversion Alerts:** Early-warning analytics detecting thermal layer inversion risks before anaerobic conditions occur[cite: 4].
-- **Observed + Forecast Graphs:** Time-series prediction trends tracking thermal shifts and environmental parameters[cite: 4].
-- **Automated Aeration Feedback:** Seamless command dispatch with clear operational states for emergency pump triggers[cite: 6].
+- **Inversion alert** with a countdown and model confidence.
+- **Observed + Forecast chart** across three depths, with a draggable scrubber.
+- **Why this alert?** shows the signals that drive the forecast.
+- **One-tap pre-emptive aeration** with a confirm step and node acknowledgements.
 
-### 5. Computer Vision & Analytics
-- **Schooling Density Tracking:** Edge vision insights evaluating fish behavior, spatial distribution, and biomass metrics[cite: 6].
-- **Interactive Event Timeline:** Historical tracking log for water parameter anomalies, alerts, and system responses.
-
----
-
-## Tech Stack & Architecture
-- **Frontend / Mobile:** React Native & Expo framework
-- **Hardware & Communication:** Microcontroller units equipped with LoRa transceivers (Meshtastic-compatible infrastructure), multi-depth temperature/DO sensors, and bathymetric sonar/LiDAR integration[cite: 4].
-- **Intelligence & Processing:** Time-series forecasting algorithms and spatial interpolation models[cite: 4].
+### 5. Vision
+- **Camera feed** with detection boxes and an adjustable confidence threshold.
+- **Behavioral analytics:** estimated stress level and schooling density with a healthy range.
+- **Event timeline** of notable behavior changes.
 
 ---
 
-## Repository Structure
-```text
-├── .claude/
-├── .vscode/
-├── app/                  # Main application screens and layout
-├── assets/               # UI screenshots & 3D render assets
-│   └── images/
-│       ├── dash.png
-│       ├── nodes.png
-│       ├── map.png
-│       ├── forecast.png
-│       ├── vision.png
-│       └── buoy_3d.png   # 3D hardware explosion model
-├── components/           # Reusable UI components
-├── constants/            # App configurations and constants
-├── context/              # State management and context providers
-├── docs/                 # Project documentation and concept notes
-├── .gitignore
-├── AGENTS.md
-├── CLAUDE.md
-├── LICENSE
-├── README.md
-├── app.json
-├── package-lock.json
-├── package.json
-└── tsconfig.json
+## Tech stack
+
+- **App:** React Native, Expo, Expo Router, TypeScript, react-native-svg
+- **Planned hardware:** Arduino, DS18B20 temperature probes, hydroacoustic and optical sensors, SX1262 LoRa, Meshtastic
+- **Planned intelligence:** time-series forecasting (LSTM) and a CNN for fish behavior
+
+## Run it locally
+
+You need Node.js and the **Expo Go** app on your phone.
+
+```bash
+git clone https://github.com/mzep98/danaw.git
+cd danaw
+npm install
+npx expo start
+```
+
+Scan the QR code with your phone camera (iPhone) or the Expo Go app (Android).
+
+> The Vision screen needs a sample fish photo, which is not included. Add any fish or aquarium photo you have rights to as `assets/images/fish.jpeg` before starting.
+
+## Prototype status
+
+This repository is a working app prototype. Sensor readings, forecasts, camera detections and device commands are **simulated**. The buoy hardware, forecasting models and LiDAR basemaps are described in the project concept note and are not yet part of this repository.
+
+## Roadmap
+
+1. Hardware prototyping and lakebed mapping (months 1 to 3)
+2. Firmware and forecasting model training (months 4 to 5)
+3. 10-unit pilot deployment and field validation (months 6 to 8)
+4. Scaling to 50 units and municipal data contracts (months 9 to 12)
+
+## Repository structure
+
+```
+app/          screens and tab navigation
+assets/       images (screenshots, 3D render, logo)
+components/   shared UI (AppText, Card, Screen)
+constants/    theme: colors, gradients, shadows
+context/      shared lake state
+docs/         project documentation
+```
+
+## Team
+
+Kaiser Francis L. Badiong, Marqus Szymon E. Pelagio and Eunice Nullan
+
+Coach: Engr. John Roy Galvez, CCPE, CRS
+
+## License
+
+The code is released under the [MIT License](LICENSE). The DANAW name and logo are not covered by that license.

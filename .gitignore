@@ -45,3 +45,8 @@ yarn-error.*
 .env.*
 .claude/
 assets/images/fish.jpeg
+
+FETCH_HEAD
+CLAUDE.md
+AGENTS.md
+.claude/
