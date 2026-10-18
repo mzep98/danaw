@@ -9,12 +9,12 @@
 ---
 
 ## About DANAW
-**DANAW** is an advanced aquaculture intelligence and swarm telemetry platform engineered to monitor, analyze, and forecast thermocline inversions and water quality shifts in vulnerable freshwater bodies (specifically optimized for **Lakes Buhi and Bato**)[cite: 4]. By deploying synchronized edge nodes connected via LoRa mesh networks and predictive machine learning models, DANAW equips fish farmers with early-warning telemetry and automated mitigation triggers to prevent catastrophic fish kills[cite: 4].
+**DANAW** is an advanced aquaculture intelligence and swarm telemetry platform engineered to monitor, analyze, and forecast thermocline inversions and water quality shifts in vulnerable freshwater bodies, specifically optimized for **Lakes Buhi and Bato**[cite: 4]. By deploying synchronized edge nodes connected via offline Meshtastic LoRa mesh networks and predictive machine learning models, DANAW equips fish farmers with early-warning telemetry and automated mitigation triggers to prevent catastrophic fish kills[cite: 4].
 
 ---
 
 ## Hardware 3D Design & Architecture
-> *IP68-rated Arduino-powered buoy node equipped with multi-depth thermal arrays and Meshtastic LoRa communication.*
+> *IP68-rated Arduino-powered buoy node equipped with multi-depth thermal arrays and Meshtastic LoRa communication[cite: 4, 6].*
 
 <p align="center">
   <img src="assets/images/buoy_3d.png" width="550" alt="DANAW Hardware 3D Model">
@@ -23,7 +23,7 @@
 ---
 
 ## App Preview & UI/UX Design
-> *Clean, high-performance interfaces tailored for field deployment and rapid farmer response.*
+> *Clean, high-performance interfaces tailored for field deployment and rapid farmer response[cite: 8].*
 
 <table>
   <tr>
@@ -80,3 +80,32 @@
 - **Frontend / Mobile:** React Native & Expo framework
 - **Hardware & Communication:** Microcontroller units equipped with LoRa transceivers (Meshtastic-compatible infrastructure), multi-depth temperature/DO sensors, and bathymetric sonar/LiDAR integration[cite: 4].
 - **Intelligence & Processing:** Time-series forecasting algorithms and spatial interpolation models[cite: 4].
+
+---
+
+## Repository Structure
+```text
+├── .claude/
+├── .vscode/
+├── app/                  # Main application screens and layout
+├── assets/               # UI screenshots & 3D render assets
+│   └── images/
+│       ├── dash.png
+│       ├── nodes.png
+│       ├── map.png
+│       ├── forecast.png
+│       ├── vision.png
+│       └── buoy_3d.png   # 3D hardware explosion model
+├── components/           # Reusable UI components
+├── constants/            # App configurations and constants
+├── context/              # State management and context providers
+├── docs/                 # Project documentation and concept notes
+├── .gitignore
+├── AGENTS.md
+├── CLAUDE.md
+├── LICENSE
+├── README.md
+├── app.json
+├── package-lock.json
+├── package.json
+└── tsconfig.json
