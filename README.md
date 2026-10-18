@@ -9,7 +9,7 @@
 ---
 
 ## About DANAW
-**DANAW** is an advanced aquaculture intelligence and swarm telemetry platform engineered to monitor, analyze, and forecast thermocline inversions and water quality shifts in vulnerable freshwater bodies (specifically optimized for **Lakes Buhi and Bato**). By deploying synchronized edge nodes connected via LoRa mesh networks and predictive machine learning models, DANAW equips fish farmers with early-warning telemetry and automated mitigation triggers to prevent catastrophic fish kills.
+**DANAW** is an advanced aquaculture intelligence and swarm telemetry platform engineered to monitor, analyze, and forecast thermocline inversions and water quality shifts in vulnerable freshwater bodies (specifically optimized for **Lakes Buhi and Bato**[cite: 4]). By deploying synchronized edge nodes connected via LoRa mesh networks and predictive machine learning models, DANAW equips fish farmers with early-warning telemetry and automated mitigation triggers to prevent catastrophic fish kills[cite: 4].
 
 ---
 
@@ -17,52 +17,52 @@
 > *Clean, high-performance interfaces tailored for field deployment and rapid farmer response.*
 
 ### Dashboard Overview
-<img src="assets/images/dash.png" width="100%" alt="Dashboard Preview">
+<img src="assets/images/dash.png" width="400" alt="Dashboard Preview">
 
 ### Swarm Nodes Configuration
-<img src="assets/images/nodes.png" width="100%" alt="Nodes Preview">
+<img src="assets/images/nodes.png" width="400" alt="Nodes Preview">
 
 ### Spatial Map & Topobathymetry
-<img src="assets/images/map.png" width="100%" alt="Map Preview">
+<img src="assets/images/map.png" width="400" alt="Map Preview">
 
 ### Predictive Forecast & Stratification
-<img src="assets/images/forecast.png" width="100%" alt="Forecast Preview">
+<img src="assets/images/forecast.png" width="400" alt="Forecast Preview">
 
 ### Computer Vision & Behavioral Analytics
-<img src="assets/images/vision.png" width="100%" alt="Vision Preview">
+<img src="assets/images/vision.png" width="400" alt="Vision Preview">
 
 ---
 
 ## Core System Modules
 
 ### 1. Dashboard
-- **3-Level Depth Telemetry Scroller:** Real-time water column profiling across stratified layers for precise environmental inspection.
-- **LoRa Control Hub & O2 Pump Station:** Remote actuation interface for manual or automated aeration control to stabilize dissolved oxygen levels.
+- **3-Level Depth Telemetry Scroller:** Real-time water column profiling across stratified layers for precise environmental inspection[cite: 4].
+- **LoRa Control Hub & O2 Pump Station:** Remote actuation interface for manual or automated aeration control to stabilize dissolved oxygen levels[cite: 6].
 - **Depth Intelligence Card:** Interactive deep-dive module with quick-access profile expansion and performance metrics.
 
 ### 2. Swarm Nodes
-- **Swarm Setup & Network Topology:** Real-time visualization of node health, connectivity paths, and mesh signal status.
+- **Swarm Setup & Network Topology:** Real-time visualization of node health, connectivity paths, and mesh signal status[cite: 6].
 - **Smart Filtering:** Instant filtering controls supporting All Connected, Unpaired, and All nodes.
 
 ### 3. Spatial Map
-- **Topobathymetry Overlays:** High-resolution spatial mapping combining lake contour depth data with live water column metrics.
+- **Topobathymetry Overlays:** High-resolution spatial mapping combining lake contour depth data with live water column metrics[cite: 4].
 - **Dynamic Node Inspection:** Clean map-first layout where detailed node metrics appear dynamically via interactive selection.
 
 ### 4. Predictive Forecast
-- **Stratification Index & Inversion Alerts:** Early-warning analytics detecting thermal layer inversion risks before anaerobic conditions occur.
-- **Observed + Forecast Graphs:** Time-series prediction trends tracking thermal shifts and environmental parameters.
-- **Automated Aeration Feedback:** Seamless command dispatch with clear operational states for emergency pump triggers.
+- **Stratification Index & Inversion Alerts:** Early-warning analytics detecting thermal layer inversion risks before anaerobic conditions occur[cite: 4].
+- **Observed + Forecast Graphs:** Time-series prediction trends tracking thermal shifts and environmental parameters[cite: 4].
+- **Automated Aeration Feedback:** Seamless command dispatch with clear operational states for emergency pump triggers[cite: 6].
 
 ### 5. Computer Vision & Analytics
-- **Schooling Density Tracking:** Edge vision insights evaluating fish behavior, spatial distribution, and biomass metrics.
+- **Schooling Density Tracking:** Edge vision insights evaluating fish behavior, spatial distribution, and biomass metrics[cite: 6].
 - **Interactive Event Timeline:** Historical tracking log for water parameter anomalies, alerts, and system responses.
 
 ---
 
 ## Tech Stack & Architecture
 - **Frontend / Mobile:** React Native & Expo framework (`npx expo start`)
-- **Hardware & Communication:** Microcontroller units equipped with LoRa transceivers (Meshtastic-compatible infrastructure), multi-depth temperature/DO sensors, and bathymetric sonar/LiDAR integration.
-- **Intelligence & Processing:** Time-series forecasting algorithms and spatial interpolation models.
+- **Hardware & Communication:** Microcontroller units equipped with LoRa transceivers (Meshtastic-compatible infrastructure), multi-depth temperature/DO sensors, and bathymetric sonar/LiDAR integration[cite: 4].
+- **Intelligence & Processing:** Time-series forecasting algorithms and spatial interpolation models[cite: 4].
 
 ---
 
