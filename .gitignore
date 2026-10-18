@@ -39,3 +39,9 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# local and private
+.env
+.env.*
+.claude/
+assets/images/fish.jpeg
