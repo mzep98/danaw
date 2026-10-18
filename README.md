@@ -16,7 +16,6 @@
 ## Hardware 3D Design & Architecture
 > *IP68-rated Arduino-powered buoy node equipped with multi-depth thermal arrays and Meshtastic LoRa communication.*
 
-*(Note: Place your 3D model export or hardware render in `assets/images/buoy_3d.png`)*
 <p align="center">
   <img src="assets/images/buoy_3d.png" width="550" alt="DANAW Hardware 3D Model">
 </p>
@@ -78,20 +77,6 @@
 ---
 
 ## Tech Stack & Architecture
-- **Frontend / Mobile:** React Native & Expo framework (`npx expo start`)
+- **Frontend / Mobile:** React Native & Expo framework
 - **Hardware & Communication:** Microcontroller units equipped with LoRa transceivers (Meshtastic-compatible infrastructure), multi-depth temperature/DO sensors, and bathymetric sonar/LiDAR integration[cite: 4].
 - **Intelligence & Processing:** Time-series forecasting algorithms and spatial interpolation models[cite: 4].
-
----
-
-## Repository Structure
-```text
-├── assets/
-│   └── images/           # App screenshots (dash, nodes, map, forecast, vision, buoy_3d)
-├── src/
-│   ├── components/       # UI views (Dashboard, Nodes, Map, Forecast, Vision)
-│   ├── assets/           # Icons, map graphics, and styling assets
-│   └── services/         # Telemetry sync and sensor data handlers
-├── public/               # Static assets and layout templates
-├── README.md
-└── LICENSE
