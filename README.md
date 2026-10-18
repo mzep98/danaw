@@ -10,6 +10,8 @@
 
 Built for the **Philippine Startup Challenge XI**.
 
+**Documents:** [Concept note (PDF)](docs/DANAW-Concept-Note.pdf)
+
 ---
 
 ## About DANAW
