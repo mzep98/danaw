@@ -9,27 +9,45 @@
 ---
 
 ## About DANAW
-**DANAW** is an advanced aquaculture intelligence and swarm telemetry platform engineered to monitor, analyze, and forecast thermocline inversions and water quality shifts in vulnerable freshwater bodies (specifically optimized for **Lakes Buhi and Bato**[cite: 4]). By deploying synchronized edge nodes connected via LoRa mesh networks and predictive machine learning models, DANAW equips fish farmers with early-warning telemetry and automated mitigation triggers to prevent catastrophic fish kills[cite: 4].
+**DANAW** is an advanced aquaculture intelligence and swarm telemetry platform engineered to monitor, analyze, and forecast thermocline inversions and water quality shifts in vulnerable freshwater bodies (specifically optimized for **Lakes Buhi and Bato**)[cite: 4]. By deploying synchronized edge nodes connected via LoRa mesh networks and predictive machine learning models, DANAW equips fish farmers with early-warning telemetry and automated mitigation triggers to prevent catastrophic fish kills[cite: 4].
+
+---
+
+## Hardware 3D Design & Architecture
+> *IP68-rated Arduino-powered buoy node equipped with multi-depth thermal arrays and Meshtastic LoRa communication.*
+
+*(Note: Place your 3D model export or hardware render in `assets/images/buoy_3d.png`)*
+<p align="center">
+  <img src="assets/images/buoy_3d.png" width="550" alt="DANAW Hardware 3D Model">
+</p>
 
 ---
 
 ## App Preview & UI/UX Design
 > *Clean, high-performance interfaces tailored for field deployment and rapid farmer response.*
 
-### Dashboard Overview
-<img src="assets/images/dash.png" width="400" alt="Dashboard Preview">
-
-### Swarm Nodes Configuration
-<img src="assets/images/nodes.png" width="400" alt="Nodes Preview">
-
-### Spatial Map & Topobathymetry
-<img src="assets/images/map.png" width="400" alt="Map Preview">
-
-### Predictive Forecast & Stratification
-<img src="assets/images/forecast.png" width="400" alt="Forecast Preview">
-
-### Computer Vision & Behavioral Analytics
-<img src="assets/images/vision.png" width="400" alt="Vision Preview">
+<table>
+  <tr>
+    <td align="center"><b>Dashboard</b></td>
+    <td align="center"><b>Swarm Nodes</b></td>
+    <td align="center"><b>Spatial Map</b></td>
+  </tr>
+  <tr>
+    <td><img src="assets/images/dash.png" width="230" alt="Dashboard"></td>
+    <td><img src="assets/images/nodes.png" width="230" alt="Nodes"></td>
+    <td><img src="assets/images/map.png" width="230" alt="Map"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Predictive Forecast</b></td>
+    <td align="center"><b>Computer Vision</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><img src="assets/images/forecast.png" width="230" alt="Forecast"></td>
+    <td><img src="assets/images/vision.png" width="230" alt="Vision"></td>
+    <td></td>
+  </tr>
+</table>
 
 ---
 
@@ -69,7 +87,7 @@
 ## Repository Structure
 ```text
 ├── assets/
-│   └── images/           # App screenshots (dash, nodes, map, forecast, vision)
+│   └── images/           # App screenshots (dash, nodes, map, forecast, vision, buoy_3d)
 ├── src/
 │   ├── components/       # UI views (Dashboard, Nodes, Map, Forecast, Vision)
 │   ├── assets/           # Icons, map graphics, and styling assets
